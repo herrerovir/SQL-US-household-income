@@ -51,3 +51,8 @@ FROM us_income_statistics_staging;
 -- This query retrieves the average income
 SELECT ROUND(AVG(`Mean`), 0) AS Average_Income
 FROM us_income_statistics_staging;
+
+-- Median income in the US
+-- This query retrieves the median income
+SELECT ROUND(AVG(`Median`), 0) AS Median_Income
+FROM us_income_statistics_staging;
