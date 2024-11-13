@@ -142,3 +142,157 @@ INNER JOIN us_income_statistics_staging AS i
 GROUP BY g.`State_Name`, `City`
 ORDER BY Avg_Income
 LIMIT 5;
+
+-- INCOME PER REGION
+-- Northeast Region Average Income
+-- This CTE query selects the average income in the northeast region
+WITH Northeast_Region AS 
+(
+	SELECT g.`State_Name`, ROUND(AVG(`Mean`), 1) AS Avg_Income
+	FROM us_geographic_location_staging AS g
+	INNER JOIN us_income_statistics_staging AS i 
+		ON g.Id = i.Id
+	WHERE g.`State_Name` = "Connecticut" OR g.`State_Name` = "Maine" OR g.`State_Name` = "Massachusetts" OR g.`State_Name` = "New Hampshire" 
+		OR g.`State_Name` = "Rhode Island" OR g.`State_Name` = "Vermont" OR g.`State_Name` = "New Jersey" OR g.`State_Name` = "New York" 
+		OR g.`State_Name` = "Pennsylvania" OR g.`State_Name` = "Maryland" OR g.`State_Name` = "Delaware"
+	GROUP BY g.`State_Name`
+	ORDER BY 2
+)
+SELECT ROUND(AVG(Avg_Income), 1) AS Northeast_Average_Income
+FROM Northeast_Region;
+
+-- Highest income states in the northeast region
+-- This query retrieves the top 3 states with highest income in the northeast area
+WITH Northeast_Region AS 
+(
+	SELECT g.`State_Name`, ROUND(AVG(`Mean`), 1) AS Avg_Income
+	FROM us_geographic_location_staging AS g
+	INNER JOIN us_income_statistics_staging AS i 
+		ON g.Id = i.Id
+	WHERE g.`State_Name` = "Connecticut" OR g.`State_Name` = "Maine" OR g.`State_Name` = "Massachusetts" OR g.`State_Name` = "New Hampshire" 
+		OR g.`State_Name` = "Rhode Island" OR g.`State_Name` = "Vermont" OR g.`State_Name` = "New Jersey" OR g.`State_Name` = "New York" 
+		OR g.`State_Name` = "Pennsylvania" OR g.`State_Name` = "Maryland" OR g.`State_Name` = "Delaware"
+	GROUP BY g.`State_Name`
+	ORDER BY 2
+)
+SELECT `State_Name`, Avg_Income
+FROM Northeast_Region
+GROUP BY Avg_Income, `State_Name`
+ORDER BY Avg_Income DESC
+LIMIT 3;
+
+-- Midwest Region Average Income
+-- This query retrieves the top 3 states with highest income in the midwest area
+WITH Midwest_Region AS 
+(
+	SELECT g.`State_Name`, ROUND(AVG(`Mean`), 1) AS Avg_Income
+	FROM us_geographic_location_staging AS g
+	INNER JOIN us_income_statistics_staging AS i 
+		ON g.Id = i.Id
+	WHERE g.`State_Name` = "Illinois" OR g.`State_Name` = "Indiana" OR g.`State_Name` = "Michigan" OR g.`State_Name` = "Ohio" 
+		OR g.`State_Name` = "Wisconsin" OR g.`State_Name` = "Iowa" OR g.`State_Name` = "Kansas" OR g.`State_Name` = "Minnesota" 
+		OR g.`State_Name` = "Missouri" OR g.`State_Name` = "Nebraska" OR g.`State_Name` = "North Dakota" OR g.`State_Name` = "South Dakota"
+	GROUP BY g.`State_Name`
+	ORDER BY 2
+)
+SELECT ROUND(AVG(Avg_Income), 1) AS Midwest_Average_Income
+FROM Midwest_Region;
+
+-- Highest income states in the midwest region
+-- This query selects the top 3 states with highes income in the midwest region
+WITH Midwest_Region AS 
+(
+	SELECT g.`State_Name`, ROUND(AVG(`Mean`), 1) AS Avg_Income
+	FROM us_geographic_location_staging AS g
+	INNER JOIN us_income_statistics_staging AS i 
+		ON g.Id = i.Id
+	WHERE g.`State_Name` = "Illinois" OR g.`State_Name` = "Indiana" OR g.`State_Name` = "Michigan" OR g.`State_Name` = "Ohio" 
+		OR g.`State_Name` = "Wisconsin" OR g.`State_Name` = "Iowa" OR g.`State_Name` = "Kansas" OR g.`State_Name` = "Minnesota" 
+		OR g.`State_Name` = "Missouri" OR g.`State_Name` = "Nebraska" OR g.`State_Name` = "North Dakota" OR g.`State_Name` = "South Dakota"
+	GROUP BY g.`State_Name`
+	ORDER BY 2
+)
+SELECT `State_Name`, Avg_Income
+FROM Midwest_Region
+GROUP BY Avg_Income, `State_Name`
+ORDER BY Avg_Income DESC
+LIMIT 3;
+
+-- West Region Average Income
+-- This query retrieves the top 3 states with highest income in the west area
+WITH West_Region AS 
+(
+	SELECT g.`State_Name`, ROUND(AVG(`Mean`), 1) AS Avg_Income
+	FROM us_geographic_location_staging AS g
+	INNER JOIN us_income_statistics_staging AS i 
+		ON g.Id = i.Id
+	WHERE g.`State_Name` = "Arizona" OR g.`State_Name` = "Colorado" OR g.`State_Name` = "Idaho" OR g.`State_Name` = "Montana" 
+		OR g.`State_Name` = "Nevada" OR g.`State_Name` = "New Mexico" OR g.`State_Name` = "Utah" OR g.`State_Name` = "Wyoming" 
+		OR g.`State_Name` = "Alaska" OR g.`State_Name` = "California" OR g.`State_Name` = "Hawaii" OR g.`State_Name` = "Oregon"
+        	OR g.`State_Name` = "Washington"
+	GROUP BY g.`State_Name`
+	ORDER BY 2
+)
+SELECT ROUND(AVG(Avg_Income), 1) AS West_Average_Income
+FROM West_Region;
+
+-- Highest income states in the west region
+-- This query retrieves the top 3 states with highest income in the west area
+WITH West_Region AS 
+(
+	SELECT g.`State_Name`, ROUND(AVG(`Mean`), 1) AS Avg_Income
+	FROM us_geographic_location_staging AS g
+	INNER JOIN us_income_statistics_staging AS i 
+		ON g.Id = i.Id
+	WHERE g.`State_Name` = "Arizona" OR g.`State_Name` = "Colorado" OR g.`State_Name` = "Idaho" OR g.`State_Name` = "Montana" 
+		OR g.`State_Name` = "Nevada" OR g.`State_Name` = "New Mexico" OR g.`State_Name` = "Utah" OR g.`State_Name` = "Wyoming" 
+		OR g.`State_Name` = "Alaska" OR g.`State_Name` = "California" OR g.`State_Name` = "Hawaii" OR g.`State_Name` = "Oregon"
+        	OR g.`State_Name` = "Washington"
+	GROUP BY g.`State_Name`
+	ORDER BY 2
+)
+SELECT `State_Name`, Avg_Income
+FROM West_Region
+GROUP BY Avg_Income, `State_Name`
+ORDER BY Avg_Income DESC
+LIMIT 3;
+
+-- South Region Average Income
+-- This CTE query selects the average income in the south region
+WITH South_Region AS 
+(
+	SELECT g.`State_Name`, ROUND(AVG(`Mean`), 1) AS Avg_Income
+	FROM us_geographic_location_staging AS g
+	INNER JOIN us_income_statistics_staging AS i 
+		ON g.Id = i.Id
+	WHERE g.`State_Name` = "Florida" OR g.`State_Name` = "Georgia" OR g.`State_Name` = "North Carolina" OR g.`State_Name` = "South Carolina" 
+		OR g.`State_Name` = "Virginia" OR g.`State_Name` = "Washington" OR g.`State_Name` = "D.C" OR g.`State_Name` = "West Virginia" 
+		OR g.`State_Name` = "Alabama" OR g.`State_Name` = "Kentucky" OR g.`State_Name` = "Mississippi" OR g.`State_Name` = "Tennessee"
+        OR g.`State_Name` = "Arkansas" OR g.`State_Name` = "Louisiana" OR g.`State_Name` = "Oklahoma" OR g.`State_Name` = "Texas"
+	GROUP BY g.`State_Name`
+	ORDER BY 2
+)
+SELECT ROUND(AVG(Avg_Income), 1) AS South_Average_Income
+FROM South_Region;
+
+-- Highest income states in the northeast region
+-- This query retrieves the top 3 states with highest income in the northeast area
+WITH South_Region AS 
+(
+	SELECT g.`State_Name`, ROUND(AVG(`Mean`), 1) AS Avg_Income
+	FROM us_geographic_location_staging AS g
+	INNER JOIN us_income_statistics_staging AS i 
+		ON g.Id = i.Id
+	WHERE g.`State_Name` = "Florida" OR g.`State_Name` = "Georgia" OR g.`State_Name` = "North Carolina" OR g.`State_Name` = "South Carolina" 
+		OR g.`State_Name` = "Virginia" OR g.`State_Name` = "Washington" OR g.`State_Name` = "D.C" OR g.`State_Name` = "West Virginia" 
+		OR g.`State_Name` = "Alabama" OR g.`State_Name` = "Kentucky" OR g.`State_Name` = "Mississippi" OR g.`State_Name` = "Tennessee"
+        OR g.`State_Name` = "Arkansas" OR g.`State_Name` = "Louisiana" OR g.`State_Name` = "Oklahoma" OR g.`State_Name` = "Texas"
+	GROUP BY g.`State_Name`
+	ORDER BY 2
+)
+SELECT `State_Name`, Avg_Income
+FROM South_Region
+GROUP BY Avg_Income, `State_Name`
+ORDER BY Avg_Income DESC
+LIMIT 3;
+
