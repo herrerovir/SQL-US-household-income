@@ -229,7 +229,7 @@ WITH West_Region AS
 	WHERE g.`State_Name` = "Arizona" OR g.`State_Name` = "Colorado" OR g.`State_Name` = "Idaho" OR g.`State_Name` = "Montana" 
 		OR g.`State_Name` = "Nevada" OR g.`State_Name` = "New Mexico" OR g.`State_Name` = "Utah" OR g.`State_Name` = "Wyoming" 
 		OR g.`State_Name` = "Alaska" OR g.`State_Name` = "California" OR g.`State_Name` = "Hawaii" OR g.`State_Name` = "Oregon"
-        	OR g.`State_Name` = "Washington"
+		OR g.`State_Name` = "Washington"
 	GROUP BY g.`State_Name`
 	ORDER BY 2
 )
@@ -247,7 +247,7 @@ WITH West_Region AS
 	WHERE g.`State_Name` = "Arizona" OR g.`State_Name` = "Colorado" OR g.`State_Name` = "Idaho" OR g.`State_Name` = "Montana" 
 		OR g.`State_Name` = "Nevada" OR g.`State_Name` = "New Mexico" OR g.`State_Name` = "Utah" OR g.`State_Name` = "Wyoming" 
 		OR g.`State_Name` = "Alaska" OR g.`State_Name` = "California" OR g.`State_Name` = "Hawaii" OR g.`State_Name` = "Oregon"
-        	OR g.`State_Name` = "Washington"
+		OR g.`State_Name` = "Washington"
 	GROUP BY g.`State_Name`
 	ORDER BY 2
 )
@@ -266,9 +266,9 @@ WITH South_Region AS
 	INNER JOIN us_income_statistics_staging AS i 
 		ON g.Id = i.Id
 	WHERE g.`State_Name` = "Florida" OR g.`State_Name` = "Georgia" OR g.`State_Name` = "North Carolina" OR g.`State_Name` = "South Carolina" 
-		OR g.`State_Name` = "Virginia" OR g.`State_Name` = "Washington" OR g.`State_Name` = "D.C" OR g.`State_Name` = "West Virginia" 
-		OR g.`State_Name` = "Alabama" OR g.`State_Name` = "Kentucky" OR g.`State_Name` = "Mississippi" OR g.`State_Name` = "Tennessee"
-        OR g.`State_Name` = "Arkansas" OR g.`State_Name` = "Louisiana" OR g.`State_Name` = "Oklahoma" OR g.`State_Name` = "Texas"
+		OR g.`State_Name` = "Virginia" OR g.`State_Name` = "District of Columbia" OR g.`State_Name` = "West Virginia" OR g.`State_Name` = "Alabama" 
+        	OR g.`State_Name` = "Kentucky" OR g.`State_Name` = "Mississippi" OR g.`State_Name` = "Tennessee" OR g.`State_Name` = "Arkansas" 
+        	OR g.`State_Name` = "Louisiana" OR g.`State_Name` = "Oklahoma" OR g.`State_Name` = "Texas"
 	GROUP BY g.`State_Name`
 	ORDER BY 2
 )
@@ -284,9 +284,9 @@ WITH South_Region AS
 	INNER JOIN us_income_statistics_staging AS i 
 		ON g.Id = i.Id
 	WHERE g.`State_Name` = "Florida" OR g.`State_Name` = "Georgia" OR g.`State_Name` = "North Carolina" OR g.`State_Name` = "South Carolina" 
-		OR g.`State_Name` = "Virginia" OR g.`State_Name` = "Washington" OR g.`State_Name` = "D.C" OR g.`State_Name` = "West Virginia" 
-		OR g.`State_Name` = "Alabama" OR g.`State_Name` = "Kentucky" OR g.`State_Name` = "Mississippi" OR g.`State_Name` = "Tennessee"
-        OR g.`State_Name` = "Arkansas" OR g.`State_Name` = "Louisiana" OR g.`State_Name` = "Oklahoma" OR g.`State_Name` = "Texas"
+		OR g.`State_Name` = "Virginia" OR g.`State_Name` = "District of Columbia" OR g.`State_Name` = "West Virginia" OR g.`State_Name` = "Alabama" 
+        	OR g.`State_Name` = "Kentucky" OR g.`State_Name` = "Mississippi" OR g.`State_Name` = "Tennessee" OR g.`State_Name` = "Arkansas" 
+       		OR g.`State_Name` = "Louisiana" OR g.`State_Name` = "Oklahoma" OR g.`State_Name` = "Texas"
 	GROUP BY g.`State_Name`
 	ORDER BY 2
 )
