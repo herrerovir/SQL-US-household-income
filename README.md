@@ -116,7 +116,7 @@ The location type with the highest income in the U.S is the borough, and the low
 | City            | 58220.8             |
 | Town            | 55194.1             |
 
-### **Top 5 states with highest the household income**
+### **Top 5 states with the highest household income**
 
 Listed below are the 5 states with the highest household income in the United States.
 
@@ -130,7 +130,7 @@ Listed below are the 5 states with the highest household income in the United St
 | Maryland             | 88444.2             |
 | Massachusetts        | 85645.7             |
 
-### **Top 5 states with lowest the household income**
+### **Top 5 states with the lowest household income**
 
 The 5 states with the lowest household income in the U.S. are listed below.
 
@@ -144,7 +144,7 @@ The 5 states with the lowest household income in the U.S. are listed below.
 | West Virginia        | 52292.0             |
 | Alabama              | 54023.8             |
 
-### **Top 5 cities with highest the household income**
+### **Top 5 cities with the highest household income**
 
 Listed below are the top 5 cities with the highest household income in the United States.
 
@@ -158,7 +158,7 @@ Listed below are the top 5 cities with the highest household income in the Unite
 | Maryland             | Chevy Chase         | 194157.5            |
 | Connecticut          | Darien              | 192882.0            |
 
-### **Top 5 cities with lowest the household income**
+### **Top 5 cities with the lowest household income**
 
 Listed below are the 5 cities with the lowest U.S. household incomes.
 
@@ -202,7 +202,7 @@ The following are the top 5 states with the highest incomes in the Midwest regio
 | Illinois             | 69358.2             |
 | North Dakota         | 64748.7             |
 
-#### **West region**
+* **West region**
 
 The average household income in the West region of the U.S. is **$69394.0**. 
 
@@ -216,7 +216,7 @@ Listed below are the 5 states with the highest rents in the West U.S. region.
 | Alaska               | 81311.8             |
 | California           | 78742.0             |
 
-#### **South region**
+* **South region**
 
 The average household income in the South region of the U.S. is **$60408.0**. 
 
